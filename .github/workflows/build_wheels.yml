@@ -5,14 +5,12 @@ on:
   release:
   pull_request:
   push:
-    branches:
-      - "*"
 
 jobs:
   build_wheels:
     name: ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    if: "contains(github.event.head_commit.message, 'build wheels')"
+    # if: "contains(github.event.head_commit.message, 'build wheels')"
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
@@ -47,7 +45,7 @@ jobs:
   build_all_wheels:
     name: ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    if: "contains(github.event.head_commit.message, 'build all wheels')"
+    # if: "contains(github.event.head_commit.message, 'build all wheels')"
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
